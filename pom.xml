@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mstakx</groupId>
-  <artifactId>demo_application</artifactId>
+  <artifactId>blue_demo_application</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
 
