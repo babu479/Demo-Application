@@ -3,11 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<H1><center>This is blue deployment testing Demo checking</center></H1>
+<H1><center>This is green deployment testing Demo checking</center></H1>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration Form</title>
 </head>
-<body BGCOLOR="#3355FF">
+<body BGCOLOR="#04B404">
 <h1>Registration Form</h1>
 <form action="register" method="post">
                         <table style="with: 50%">
