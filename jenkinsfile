@@ -27,12 +27,15 @@ stage ('Build') {
 sh """
 cd $WORKSPACE/blue
 mvn clean install"""
+sh """
+cd $WORKSPACE/green
+mvn clean install"""
 }
 stage ("Image Prune") {
     imagePrune(BLUE_CONTAINER_NAME, GREEN_CONTAINER_NAME)
 }
 stage('Image Build'){
-        imageBuild(BLUE_CONTAINER_NAME, GREEN_CONTAINER_NAME,BLUE_CONTAINER_NAME_TAG,GREEN_CONTAINER_NAME_TAG)
+        imageBuild(BLUE_CONTAINER_NAME, GREEN_CONTAINER_NAME,CONTAINER_TAG)
     }
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'DockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
