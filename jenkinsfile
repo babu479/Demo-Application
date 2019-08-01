@@ -58,11 +58,11 @@ stage('Image Build'){
 def imageBuild(blueContainerName, greenContainerName, tag){
     sh """
     cd $WORKSPACE/blue
-    cp $WORKSPACE/target/*.war $WORKSPACE/blue"
+    cp $WORKSPACE/target/*.war $WORKSPACE/blue
 	docker build -t $blueContainerName:$tag  -t $blueContainerName --pull --no-cache ."""
      sh """
     cd $WORKSPACE/green
-    cp $WORKSPACE/target/*.war $WORKSPACE/green"
+    cp $WORKSPACE/target/*.war $WORKSPACE/green
 	docker build -t $greenContainerName:$tag  -t $greenContainerName --pull --no-cache ."""
     echo "Image build complete"
 }
