@@ -31,7 +31,7 @@ stage('Image Build'){
 }
  def imagePrune(containerName){
     try {
-        
+        sh "id"
         sh "docker image prune -f"
         sh "docker stop $containerName"
         sh "whoami"
