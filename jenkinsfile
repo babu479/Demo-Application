@@ -58,6 +58,7 @@ echo "failed"
 }
 }
 }
+}
 
  def imagePrune(blueContainerName, greenContainerName){
     try {
