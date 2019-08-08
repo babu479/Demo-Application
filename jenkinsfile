@@ -53,9 +53,9 @@ sh"""
 cd $WORKSPACE/helm-chart/
 helm install --name ${deployment} .
 """
-else{
-echo "failed"
 }
+else {
+echo "failed"
 }
 }
 }
