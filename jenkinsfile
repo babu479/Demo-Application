@@ -22,6 +22,11 @@ git branch: 'green',
 credentialsId: 'ae6c9066a-410c-4462-b2ed-56004c6c20ab',
 url: 'https://github.com/babu479/Demo-Application.git'
 }
+dir("helm-chart"){
+git branch: 'master',
+credentialsId: 'ae6c9066a-410c-4462-b2ed-56004c6c20ab',
+url: 'https://github.com/babu479/helm_charts.git'
+}
 }
 stage ('Build') {
 sh """
@@ -42,7 +47,15 @@ stage('Image Build'){
             pushToImage(BLUE_CONTAINER_NAME,GREEN_CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
         }
     }
+stage('deployment')
+if ("$deployment" == "blue_deployment"){
+sh"""
+cd $WORKSPACE/helm-chart/blue_chart
+helm install --name ${deployment} .
+"""
 }
+}
+
  def imagePrune(blueContainerName, greenContainerName){
     try {
         sh """id
