@@ -47,7 +47,7 @@ stage('Image Build'){
             pushToImage(BLUE_CONTAINER_NAME,GREEN_CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
         }
     }
-stage('deployment'){
+/*stage('deployment'){
 if ("$deployment" == "blue_deployment"){
 sh"""
 cd $WORKSPACE/helm-chart/
@@ -57,7 +57,7 @@ helm install --name ${deployment} .
 else {
 echo "failed"
 }
-}
+}*/
 }
 
  def imagePrune(blueContainerName, greenContainerName){
